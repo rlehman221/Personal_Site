@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="content-script-type" content="text/javascript" />
+		<meta http-equiv="content-style-type" content="text/css" />
+		<meta http-equiv="content-language" content="nl" />
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<meta name="author" content="Ryan Lehman" />	
+		<meta name="description" content="I'm Ryan Lehman, a ninja webdeveloper / creative programmer with good knowledge of front-end technics." />
+		<meta name="keywords" content="Ryan Lehman, Interactive Resume, PHP programmer, Web developer, Startup, Interactive CV, Resume, CV, Whoopaa, HRMatches, Sanitairwinkel, Algorithms, PHP, MySQL, OOP" />
+		<meta name="robots" content="index, follow" />
+		<meta name="revisit-after" content="14 days" />
+			
+		
+		
+		<!-- Bootstrap core CSS -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet" type="text/css" />
+		<link href="view/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="view/style.css" rel="stylesheet" />
+		
+		<link rel="shortcut icon" href="RIcon.png" type="image/x-icon" />
+		<link rel="icon" href="RIcon.png" type="image/x-icon" />
+		
+		<!-- Begin Inspectlet Embed Code -->
+		<script type="text/javascript" id="inspectletjs">
+			window.__insp = window.__insp || [];
+			__insp.push(['wid', 92785244]);
+			(function() {
+				function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://www.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+				if (window.attachEvent){
+					window.attachEvent('onload', __ldinsp);
+				}else{
+					window.addEventListener('load', __ldinsp, false);
+				}
+			})();
+		</script>
+		<!-- End Inspectlet Embed Code -->
+	</head>
+	<body data-spy="scroll" data-target="#navbar-example">	 
+		
+		<div class="">
+			
+
+		
+		<div id="experiences" class="container">
+			<h2>Build Availability</h2>
+<p class="lead">
+	<a href=index.html#/projects class="btn btn-primary">HOME</a>
+</p>
+
+<hr />
+
+<!--<div class="alert alert-danger">
+	<strong>Looking for an awesome new challenge somewhere in the neighborhood of Den Bosch or Amsterdam as a Creative PHP Web Developer. </strong>
+</div>-->
+
+<h3></h3>
+
+
+<div class="experiences">
+
+					
+	<div class="experience row">
+		
+		<div class="">
+			<p>
+				<strong>Summary:</strong>
+				<span class="">The entire code is written in Groovy with HTML and CSS inter webbed inside. I had never written in Groovy before but wanted to tackle a project that involved a Jenkins integration. I realized that so many companies used Jenkins for running a bulk of their builds using VM’s. The problem was that there is only so much core power to run more and more builds because then at a certain point more VM’s would be created. As more VM’s went online this would cause a major issue with the speed of the Jenkins total environment capabilities. The goal of this project was to present a dashboard to every user which displayed each build in a 24 hour table. Instead of adding a whole new VM or dealing with slow build times this would utilize each builds availability. The user would be able to see if there are certain times where a lot of builds are clustered to space them out. Also if a new build needed to be run, then they could see a multitude of good times to run. The only builds that would appear would be the ones that run on a timer. I didn’t include any manual builds because if the user were to run a manual build they could just look at the schedule and space out when they need to run their build. 
+					</span>
+
+				<strong>Execution:</strong>
+				<span class="">The biggest problem I had initially was understanding the mixture of Groovy along with the Jenkins library. I was able to catch onto Groovy because of my Java background, but using the Jenkins documentation didn’t come as fast since a lot of the documentation was out dated. My first objective was to find out how to go through every node, which in this case was each machine used to run the builds. After being able to find each node in the Jenkins environment, each node has builds underneath them which can range from 1 to any possible number. Of course there could be faster ways to optimize this process like going through each and every build, but at the moment optimizing for the quickest possible code wasn’t the objective. The code takes each VM node and then begins to run through each of the builds on that machine. It begins by going through each build using a customized loop to extract particular build information. Before it even goes through the process of getting information from each build, the build trigger is analyzed to see if it runs by manual command or through a scheduled activation. 
+
+				</br>
+				</br>
+
+				Then if the build is ran through a schedule, it continues and if not it gets discarded. The current build, running through the loop is then brought on by a method to receive its last build duration which is formatted in hours, minutes, and seconds. This is then converted into only hours. The last build is also called upon by another method to find the exact start time of the build. Combining both the original start time of the last build along with the duration this allowed to map each hour out for each build.
+
+				</br>
+				</br>
+
+				For the dashboard to universally be used I wanted to make sure that the build names wouldn’t randomly be cut out of the HTML. If the build name exceeded a certain length then the second half would be put onto the line below it. Then using an array called "hours", I was able to mark each index as a 24 hour time manager. This would allow me to store the information until a later point. The next part was to obtain the machine name in which the current build was apart of. This name was then added to a variable to be stored for later use. Towards the end of the loop the last part was to add each build to a data structure. A list utilizing placement variables was exactly what I used. The list stored the information along with checking if the build passed, failed, or aborted. The variables were then reset for the next loop.
+
+				</br>
+				</br>
+
+				The next step was to present the data not only to the user but also in the form of an integrated dashboard for Jenkins. By creating a character upstream, I was able to then create a markupBuilder variable to begin constructing the HTML layout. I then created a table in HTML with rows to show machine names, build names, build date, and then the 24 hour layout. After the rows were created the columns had to be constructed. This was done by integrating loops to form the machine name with all of the builds underneath. The CSS was used at first to style the rows and columns to be particular fonts. Then I went back in to organize the data into a colored coordinated system. The list created in the beginning starts to extract data from each section in the list to a particular row and columns in the table. After all the deconstruction and reassembly is made, the HTML is then exported into a file to be exported onto a custom dashboard in the Jenkins environment.
+
+				</br>
+				</br>
+					</span>
+ 				
+				<strong>Utilizes: Jenkins Virtual Machines, Groovy, HTML, CSS, Linear Data Structures</strong>
+				<a href="https://github.com/rlehman221/Jenkins_Build_Availability" class="btn btn-primary" target="_blank">Visit Project</a>
+
+			</p>
+		</div>
+	</div>
+	
+	
+	
+	
+</div>
+	
+	
+
+
+	
+					
+	
+
+
+	</body>
+</html>
+

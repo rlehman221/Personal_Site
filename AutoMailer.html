@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="content-script-type" content="text/javascript" />
+		<meta http-equiv="content-style-type" content="text/css" />
+		<meta http-equiv="content-language" content="nl" />
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<meta name="author" content="Ryan Lehman" />	
+		<meta name="description" content="I'm Ryan Lehman, a ubiquitous Electrical Engineer / innovative programmer with theoretical and technical knowledge." />
+		<meta name="keywords" content="Ryan Lehman, Resume, Programmer, Web developer, Startup, Electrical Engineer, Software Developer, Innovative" />
+		<meta name="robots" content="index, follow" />
+		<meta name="revisit-after" content="14 days" />
+			
+		
+		
+		<!-- Bootstrap core CSS -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet" type="text/css" />
+		<link href="view/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="view/style.css" rel="stylesheet" />
+		
+		<link rel="shortcut icon" href="RIcon.png" type="image/x-icon" />
+		<link rel="icon" href="RIcon.png" type="image/x-icon" />
+		
+		<!-- Begin Inspectlet Embed Code -->
+		<script type="text/javascript" id="inspectletjs">
+			window.__insp = window.__insp || [];
+			__insp.push(['wid', 92785244]);
+			(function() {
+				function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://www.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+				if (window.attachEvent){
+					window.attachEvent('onload', __ldinsp);
+				}else{
+					window.addEventListener('load', __ldinsp, false);
+				}
+			})();
+		</script>
+		<!-- End Inspectlet Embed Code -->
+	</head>
+	<body data-spy="scroll" data-target="#navbar-example">	 
+		
+		<div class="">
+			
+
+		
+		<div id="experiences" class="container">
+			<h2>AutoMailer</h2>
+<p class="lead">
+	
+	<a href=index.html#/projects class="btn btn-primary">HOME</a>
+	
+</p>
+
+<hr />
+
+<!--<div class="alert alert-danger">
+	<strong>Looking for an awesome new challenge somewhere in the neighborhood of Den Bosch or Amsterdam as a Creative PHP Web Developer. </strong>
+</div>-->
+
+<h3></h3>
+
+
+<div class="experiences">
+
+					
+	<div class="experience row">
+		
+		<div class="">
+			<p>
+				<strong>Summary:</strong>
+				<span class="">Uses Python to obtain access to Outlooks environment. Data is then extracted from JSON and imported into the user's home or server environment. Imports are then run against a direct database to be analyzed for duplication. Each piece of data is analyzed and run through looping structures to insure complete inspection. After inspection, data is manipulated in the Outlook environment along with files stored on the users environment. The purpose of the program is to check for certain duplicated criteria while also being able to be set up and tear down through an automation. If two files don't match up, they are stored in a folder for the user to access.
+
+
+
+				 
+					</span>
+
+				<strong>Execution:</strong>
+				<span class="">The process begins by obtaining an access token from Outlooks API. Once requested and permission is granted then the program begins to extract data in the form of JSON from the Outlook environment. This script can be utilized for multiple Outlook functionally but in this case it is used to check against a Data Integrity Agent for fraud emails. It allows data to be parsed out of the JSON and either complete a simple comparison or a direct comparison depending on which one is needed. The script can be customized to suit the need for the user but presently allows the given data to be stored in the form of .txt files, held on either a GitHub account to be pulled or directly onto a server. It begins by pulling the custom parsed data defined and dumps them into a particular folder. The data is defined before the program begins which is a particular inbox.
+
+				</br>
+				</br>
+
+				The data is stored in a user specified file system. For the present program, the "Current Folder" is storing the pulled data. Specific information such as the amount of data to be pulled out is also in the form of JSON and does a simple pull request. The request then goes through each specific node in the data and dumps the information into the "CurrentFolder". Along with the "CurrentFolder", there exists another file set which contains the preset information for comparison. 
+
+
+				</br>
+				</br>
+
+				
+				Next the segment goes down the data set in the "Current Folder" and begins to process a comparison for any duplication. This is done by looping through the preset data and using a method to check for any similar containment. As the data runs through, there are multiple checks, such as match counters to check if each piece of data was able to get extracted into the program and checked for duplication. 
+
+				</br>
+				</br>
+
+				Then once each piece of data has been checked, the program goes through and clears out the data that has passed each check case. If the data did not pass then it is presented to the user to show which exact failures. The program continues and the user is then informed if the test has had a 100% completion or not.
+
+				</br>
+				</br>
+
+				The program is meant to work in an automated environment. This is why there are add ons such as clearing data and resetting for the next test case to occur. Along with this I believe the could be further improvements to the program. This could involve a faster algorithm to run through the looping process. I was fortunate enough to be working with small data but large data could stack up. Which having a quick runtime would be beneficial. I also believe that the program can be expanded into not storing the files locally but in a git repository to be pulled down when needed. Also there could be certain information about the error in comparison checks for each case. I have thought about implementing a UI for the program but then ultimately agreed that the use case is not worth having since the program is meant to be run on a server and not manually driven.
+
+
+
+					</span>
+ 				
+				<strong>Utilizes: Python, Outlook API, UFT</strong>
+				<a href="https://github.com/rlehman221/AutoMailer" class="btn btn-primary" target="_blank">Visit Project</a>
+			</p>
+		</div>
+	</div>
+	
+	
+	
+	
+</div>
+	
+	
+
+
+	
+					
+	
+
+
+	</body>
+</html>
