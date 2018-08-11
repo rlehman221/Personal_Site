@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="content-script-type" content="text/javascript" />
+		<meta http-equiv="content-style-type" content="text/css" />
+		<meta http-equiv="content-language" content="nl" />
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<meta name="author" content="Ryan Lehman" />	
+		<meta name="description" content="I'm Ryan Lehman, a ubiquitous Electrical Engineer / innovative programmer with theoretical and technical knowledge." />
+		<meta name="keywords" content="Ryan Lehman, Resume, Programmer, Web developer, Startup, Electrical Engineer, Software Developer, Innovative" />
+		<meta name="robots" content="index, follow" />
+		<meta name="revisit-after" content="14 days" />
+			
+		
+		
+		<!-- Bootstrap core CSS -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet" type="text/css" />
+		<link href="view/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="view/style.css" rel="stylesheet" />
+		
+		<link rel="shortcut icon" href="RIcon.png" type="image/x-icon" />
+		<link rel="icon" href="RIcon.png" type="image/x-icon" />
+		
+		<!-- Begin Inspectlet Embed Code -->
+		<script type="text/javascript" id="inspectletjs">
+			window.__insp = window.__insp || [];
+			__insp.push(['wid', 92785244]);
+			(function() {
+				function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://www.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+				if (window.attachEvent){
+					window.attachEvent('onload', __ldinsp);
+				}else{
+					window.addEventListener('load', __ldinsp, false);
+				}
+			})();
+		</script>
+		<!-- End Inspectlet Embed Code -->
+	</head>
+	<body data-spy="scroll" data-target="#navbar-example">	 
+		
+		<div class="">
+
+		<div id="experiences" class="container">
+			<h2>Airplay Audio Amplifier</h2>
+<p class="lead">
+	<a href=index.html#/projects class="btn btn-primary">HOME</a>
+</p>
+
+<hr />
+
+<h3></h3>
+
+<div class="experiences">
+					
+	<div class="experience row">
+		
+		<div class="">
+			<p>
+				<strong>Summary:</strong>
+				<span class="">
+
+					<p style="text-indent: 40px">
+						I launched this project because I wanted to grow a better understanding of a few topics at the time, which included creating a custom linux distribution, rerouting connections kernel connections through the device tree, and diving into creating custom PCB designs for the hardware I would be using. I knew I wanted some combination of the above topics which is why I choose to create a custom airplay amplifier for either a multi-room stereo system or even a single unit running in mono mode.
+					</p>
+					
+					<p style="text-indent: 40px">
+						The end result of the project incorporated a SBC which was chosen to be the beaglebone black running a custom yocto linux build, that incorporated airplay modules for iOS/MacOS devices to stream directly to. The beagle bone was then connected to a UDA1334 audio DAC for audio input from an I2S stream. The DAC was then connected to a TPA3116D2 class-D audio Amp for analog sound to be played out a set of speakers.
+					</p>
+
+				</br>
+				
+				<div style="text-align:center"> 
+				<img src = "view/images/Airplay_Audio_Amp/Board.png" alt = "Test Image" width = 50% height = auto/>
+				</div>
+
+				</span>
+
+				</br>
+
+				<strong>Execution:</strong>
+				<span class="">
+
+					<p style="text-indent: 40px">
+						I began looking into what would be a good starting point where I could allow an audio stream to flow out of a simple MCU onto a speaker. I had both a beaglebone black (BBB) and a raspberry pi from past projects and thought it would be really convenient to utilize one of them for this endeavour. I decided to go with the beaglebone black mostly because of the sample rate of I2S but also because the master clock on the RasPi isn’t accessible which would require any form of DAC to operate asynchronously.
+					</p>
+
+					<p style="text-indent: 40px">
+						After choosing the BBB, I then wanted to test out the I2S by using a simple class D amplifier which was chosen to be the MAX98357A. I was able to setup a small circuit that allowed the BBB to be flashed with “Volumio”, which was a library I found to allow an airplay connection to be streamed through I2S to the DAC and then played out a speaker.
+					</p>
+
+				<div style="text-align:center"> 
+				<img src = "view/images/Airplay_Audio_Amp/First_Layout.jpg" alt = "Test Image" width = 50% height = auto/>
+				<img src = "view/images/Light_Switch/Random.png" alt = "Test Image" width = 1% height = auto/>
+				<img src = "view/images/Airplay_Audio_Amp/first_test.JPG" alt = "Test Image" width = 40% height = auto/>
+				</div>
+
+				</br>
+
+				<p style="text-indent: 40px">
+					I then began digging first into what I might need on the firmwares end, which is where I stumbled upon Yocto. Yocto would allow me to create a custom linux build for my needs but definitely seemed a little overkill for this project. Their were other platforms out their that would allow me to create a custom build with not nearly as much overhaul but Yocto seemed to really allow the user to get down to very specific details especially if any form of cross platform would come of the future. It also seemed to be a well known tool and I would be bound to come across it again at some point, so why not learn now.
+				</p>
+
+				<p style="text-indent: 40px">
+					Looking into a lot of what Yocto has to offer, I was able to realize quickly that BBB’s firmware was able to be embedded into a Yocto image in a relatively seamlessly way based on the large user base from the open source community.
+				</p>
+
+
+				<p style="text-indent: 40px">
+					After trying to build a simple image for my BBB, I quickly found out I needed to get a better grasp on the bitbake tool if I wanted to allow for any form of custom builds later on. I found it really interesting to see how using simple layers and configurations, your able to create such a powerful deployment tool in a relativity fast way.
+				</p>
+
+
+				<p style="text-indent: 40px">
+					Next, I moved onto finding an efficient way for casting an airplay stream onto the board through the local network. The objective of the project was not to create my own form of airplay protocol but could be an interesting project for another time. This led me to find a library called “shairport-sync”. This would allow airplays protocol to be utilized through another protocol called “avahi”, which I could then send through an I2S connection as long as a local network would be connected to my BBB.
+				</p>
+
+
+				<p style="text-indent: 40px">
+					After running through multiple tests, I began to notice a large amount of cutouts in the sound from time to time. Using a few debugging techniques I narrowed the problem down to the processor overheating from the stream itself. After long periods of time with the shairport-sync stream open, the cpu would actually throttle itself back which would cause a cutout in the audio stream. I solved this pretty quickly by incorporating a small heatsink onto the board. After testing with my setup from before, it was shown to work and I moved onto the next phase.
+
+				</p>
+
+
+				<p style="text-indent: 40px">
+					These next steps seemed to be the most challenge, mostly because my little knowledge of actually getting my hands dirty within any form of device tree before. I knew only of what the device tree allowed, which was a way for the kernel to understand the hardware paths used at boot up but also for any custom peripherals to be activated or deactivated. I began researching a lot to understand not just the BBB’s device tree design but also general topics that could pertain to other embedded devices.
+				</p>
+
+				<p style="text-indent: 40px">
+					I was able to find a powerful structure that was called “overlays”. Introduced in the 3.8 Linux Kernel, these overlays would allow you to make changes to the pinmux without having to change the baseline device tree or even reboot your machine. Since the beaglebone black has multiple functionalities on each pin, I was able to use custom overlays to disable certain pin configurations such as hdmi video/audio. This was done because the I2S route on the board uses the hdmi audio as a beginning routing path but then leads off to certain pins on the P9 header. The reason why I disabled the hdmi video/audio was to allow a screen to be hooked up to the board but also keeping the I2S connection. If that overlay was not in place, the I2S connection would be overridden by the audio streamed in from the hdmi audio.
+				</p>
+
+
+				<p style="text-indent: 40px">
+					While building out a lot of the firmware the process of creating a amplifier was also in place. Eagle was used to do both the schematic and board design mostly because of the free tier of software that they offer. I then used a digital to analog converter (DAC) to allow the I2S signal to be transferable for the speaker. I went with one of TI’s DACs, which was the PCM5100 and the NCP2811 from On Semiconductor. Both of these parts were picked because they had a good baseline functionality, the audio amp was from a class D category, and the power consumption of both could be powered through the beaglebone without needing an external supply load.
+				</p>
+
+				<div style="text-align:center"> 
+				<img src = "view/images/Airplay_Audio_Amp/Board.png" alt = "Test Image" width = 50% height = auto/>
+				</div>
+
+				</br>
+
+				<div style="text-align:center"> 
+				<img src = "view/images/Airplay_Audio_Amp/Layout.png" alt = "Test Image" width = 50% height = auto/>
+				</div>
+				</br>
+
+				</span>
+
+				<strong>Future Expansion:</strong>
+				<span class="">
+
+				<p style="text-indent: 40px">
+					To allow this project to be further improved, I would like to add a signal processing unit into the mix to allow a more in depth control over the audio stream. With this integrated into the scheme, I would be able to utilize filtering and depth control to allow a more unique perception of the sound to be routed. I would also want to incorporate a small LCD touch screen for the beaglebone or even use bluetooth with a mobile application to allow connecting to a network to be more seamlessly integrated.
+				</p>
+
+				</span>
+
+				</br>
+ 				
+				<strong>Utilizes: C, Yocto, Linux, Eagle, PCB Design</strong>
+
+				</br>
+
+				</br>
+				
+			</p>
+		</div>
+	</div>
+</div>
+	</body>
+</html>
